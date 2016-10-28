@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<title>教务三班数字电路实验报告上传</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div id="main">
+		<h1>实验1</h1>
+		<p>文件名示例：15331000张三实验1.zip</p>
+		<p>（注意：文件大小不能超过10M）</p>
+		<form action="" method=post enctype=multipart/form-data>
+			<div id="class-selecting">
+				<p>请选择班级： 
+					<input type=radio name="class-num" value="5班">5班
+					<input type=radio name="class-num" value="6班">6班
+				</p>
+			</div>
+			<input type=file name=file>
+			<input type=submit value="上传">
+		</form>
+		{% if filename %}
+		<p class="feedback">{{ feedback }}你上传的文件为： {{ filename }}</p>
+		<p class="feedback">若上传错误，请重新上传</p>
+		{% else %}
+		<p class="feedback">{{ feedback }}</p>
+		{% endif %}
+	</div>
+</body>
+</html>
