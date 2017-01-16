@@ -1,0 +1,4 @@
+/clientFiles
+/venv
+*.pyc
+*.sock
